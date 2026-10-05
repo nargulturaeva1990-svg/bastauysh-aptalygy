@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Бастауыш апталығы, 5–15 қазан 2026</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=PT+Sans:wght@400;700&display=swap">
+<style>
+:root{
+  --paper:#F5F9FF; --grid:#D6E4F7; --sheet:#FFFFFF; --ink:#1B2559; --soft:#56608C; --line:#C9D6EC;
+  --board:#2C5A4C; --board2:#234A3E; --wood:#B67C3A; --chalk:#F7F5EA;
+  --red:#D93C45; --yellow:#E9A800; --blue:#2A66E0; --green:#1F9460; --violet:#7A4FD0;
+  --red-bg:#FDE9EA; --yellow-bg:#FFF4D1; --blue-bg:#E3EDFF; --green-bg:#DFF5EA; --violet-bg:#EEE7FD;
+  --display:"Balsamiq Sans","Comic Sans MS","Trebuchet MS",sans-serif;
+  --body:"PT Sans","Segoe UI",Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121830; --grid:#1D2646; --sheet:#1A2242; --ink:#EAEEFC; --soft:#A7B1D6; --line:#2C3764;
+    --red:#FF7A80; --yellow:#FFCB45; --blue:#7FA8FF; --green:#5FD39C; --violet:#B79BFF;
+    --red-bg:#3A1C26; --yellow-bg:#3A3014; --blue-bg:#1B2B57; --green-bg:#143629; --violet-bg:#2A2152;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121830; --grid:#1D2646; --sheet:#1A2242; --ink:#EAEEFC; --soft:#A7B1D6; --line:#2C3764;
+  --red:#FF7A80; --yellow:#FFCB45; --blue:#7FA8FF; --green:#5FD39C; --violet:#B79BFF;
+  --red-bg:#3A1C26; --yellow-bg:#3A3014; --blue-bg:#1B2B57; --green-bg:#143629; --violet-bg:#2A2152;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth; scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+body{
+  margin:0; color:var(--ink); font-family:var(--body); font-size:1.0625rem; line-height:1.55;
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:0 20px}
+h1,h2,h3,h4{font-family:var(--display); margin:0; line-height:1.15}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yellow); outline-offset:3px; border-radius:6px}
+
+/* Тақта */
+.hero{padding:28px 0 8px}
+.board{
+  background:radial-gradient(120% 90% at 20% 10%,var(--board) 0%,var(--board2) 100%);
+  border:14px solid var(--wood); border-radius:10px; color:var(--chalk);
+  padding:clamp(22px,4vw,48px); display:grid; grid-template-columns:1.25fr 1fr; gap:24px; align-items:center;
+  box-shadow:0 10px 0 -4px rgba(27,37,89,.18);
+}
+.board .school{font-family:var(--display); font-size:1rem; opacity:.85; margin:0 0 14px}
+.board h1{font-size:clamp(2.6rem,7.5vw,5rem); letter-spacing:-.01em}
+.board .theme{font-family:var(--display); font-size:clamp(1.15rem,2.4vw,1.6rem); margin:18px 0 0; max-width:22em}
+.board .dates{display:inline-block; margin-top:22px; padding:6px 16px; border:2px dashed var(--chalk); border-radius:999px; font-family:var(--display); font-size:1.15rem}
+.doodle{width:100%; height:auto; display:block}
+.doodle *{fill:none; stroke:var(--chalk); stroke-width:3; stroke-linecap:round; stroke-linejoin:round}
+.doodle text{fill:var(--chalk); stroke:none; font-family:var(--display); font-weight:700}
+.doodle .c1{stroke:#FFD86B}.doodle .c2{stroke:#FF9AA0}.doodle .c3{stroke:#9CCBFF}
+.doodle .draw{stroke-dasharray:600; stroke-dashoffset:600; animation:draw 1.6s ease-out forwards}
+.doodle .d2{animation-delay:.35s}.doodle .d3{animation-delay:.7s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.doodle .draw{animation:none; stroke-dashoffset:0} html{scroll-behavior:auto}}
+.ledge{height:12px; background:var(--wood); margin:0 28px; border-radius:0 0 8px 8px; position:relative}
+.ledge::before,.ledge::after{content:""; position:absolute; top:-7px; height:7px; border-radius:3px}
+.ledge::before{left:12%; width:46px; background:var(--chalk)}
+.ledge::after{left:22%; width:30px; background:#FFD86B}
+
+/* Күндер жолағы */
+.days{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:var(--paper); border-bottom:2px solid var(--line); margin-top:26px}
+.days ul{list-style:none; margin:0 auto; padding:10px 20px; max-width:1080px; display:flex; gap:8px; overflow-x:auto}
+.days a{
+  display:flex; flex-direction:column; align-items:center; min-width:62px; padding:6px 10px; text-decoration:none;
+  background:var(--sheet); border:2px solid var(--line); border-radius:12px; font-family:var(--display)
+}
+.days a b{font-size:1.3rem; line-height:1.1}
+.days a span{font-size:.8rem; color:var(--soft)}
+.days a:hover{border-color:var(--blue)}
+.days a.today{background:var(--yellow-bg); border-color:var(--yellow)}
+
+/* Күн */
+.day{display:grid; grid-template-columns:200px 1fr; gap:28px; padding:40px 0; border-bottom:2px dashed var(--line)}
+.day:last-of-type{border-bottom:0}
+.stamp{position:relative}
+.stamp .num{font-family:var(--display); font-weight:700; font-size:4.6rem; line-height:.9}
+.stamp .wd{font-family:var(--display); font-size:1.15rem; color:var(--soft); margin-top:4px}
+.stamp .badge{display:none; margin-top:8px; padding:2px 12px; background:var(--yellow); color:#1B2559; border-radius:999px; font-family:var(--display); font-weight:700; font-size:.95rem}
+.day.today .stamp .badge{display:inline-block}
+.stamp svg{width:132px; height:132px; margin-top:16px; display:block}
+.day h2{font-size:1.75rem; margin-bottom:6px}
+.shift{font-family:var(--display); font-size:1.05rem; color:var(--soft); margin:22px 0 10px; display:flex; align-items:center; gap:10px}
+.shift::after{content:""; flex:1; border-top:2px solid var(--line)}
+.evs{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+.ev{
+  background:var(--sheet); border:2px solid var(--line); border-left:8px solid var(--k); border-radius:6px 14px 14px 6px;
+  padding:14px 18px; display:grid; grid-template-columns:128px 1fr; gap:6px 18px; align-items:start
+}
+.ev .time b{font-family:var(--display); font-size:1.1rem; display:block; white-space:nowrap}
+.ev .time span{font-size:.9rem; color:var(--soft)}
+.ev h4{font-size:1.2rem}
+.ev .cls{margin:2px 0 0; color:var(--soft)}
+.ev .meta{grid-column:2; display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; font-size:.98rem; margin-top:4px}
+.chip{background:var(--kb); color:var(--k); font-weight:700; padding:1px 12px; border-radius:999px}
+.k-math{--k:var(--blue);--kb:var(--blue-bg)} .k-abc{--k:var(--red);--kb:var(--red-bg)}
+.k-lang{--k:var(--green);--kb:var(--green-bg)} .k-read{--k:var(--yellow);--kb:var(--yellow-bg)}
+.k-fun{--k:var(--violet);--kb:var(--violet-bg)}
+.k-read .chip{color:var(--ink)}
+
+footer{padding:36px 0 48px; color:var(--soft); font-size:.98rem}
+footer p{margin:0 0 4px}
+
+@media (max-width:760px){
+  .board{grid-template-columns:1fr; border-width:10px}
+  .doodle{max-width:340px; margin:0 auto}
+  .day{grid-template-columns:1fr; gap:14px; padding:30px 0}
+  .stamp{display:flex; align-items:center; gap:16px}
+  .stamp svg{width:84px; height:84px; margin:0 0 0 auto}
+  .stamp .num{font-size:3.4rem}
+  .ev{grid-template-columns:1fr}
+  .ev .meta{grid-column:1}
+}
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <div class="board">
+    <div>
+      <p class="school">Р. Қабылов атындағы №3 ЖББМ, 2026–2027 оқу жылы</p>
+      <h1>Бастауыш апталығы</h1>
+      <p class="theme">«ЖИ және шығармашыл бастауыш: жаңа дәуірге қадам»</p>
+      <span class="dates">5–15 қазан 2026</span>
+    </div>
+    <svg class="doodle" viewBox="0 0 360 300" role="img" aria-label="Тақтаға бормен салынған сурет: робот, әріптер, фигуралар және есеп">
+      <!-- робот -->
+      <rect class="draw" x="120" y="70" width="110" height="84" rx="16"/>
+      <path class="draw" d="M175 70V44"/><circle class="c1 draw" cx="175" cy="36" r="8"/>
+      <circle class="draw d2" cx="153" cy="104" r="10"/><circle class="draw d2" cx="197" cy="104" r="10"/>
+      <path class="c2 draw d2" d="M155 132q20 14 40 0"/>
+      <rect class="draw d2" x="135" y="164" width="80" height="70" rx="12"/>
+      <path class="draw d2" d="M135 184l-30 22M215 184l34-26"/>
+      <path class="draw d3" d="M158 234v30M192 234v30"/>
+      <!-- қарындаш -->
+      <path class="c1 draw d3" d="M244 164l44-52 14 12-44 52-18 6z"/>
+      <!-- фигуралар -->
+      <circle class="c3 draw d3" cx="42" cy="228" r="22"/>
+      <path class="c2 draw d3" d="M300 262l26-44 26 44z"/>
+      <rect class="c1 draw d3" x="18" y="130" width="42" height="42"/>
+      <!-- жазулар -->
+      <text x="20" y="72" font-size="54">Қ</text><text x="72" y="96" font-size="44">ы</text>
+      <text x="252" y="64" font-size="30">7+3=10</text>
+      <text x="262" y="218" font-size="26">ЖИ</text>
+      <path class="c1 draw d3" d="M24 270h70M256 76h92"/>
+    </svg>
+  </div>
+  <div class="ledge" aria-hidden="true"></div>
+</header>
+
+<nav class="days" aria-label="Апталық күндері"><ul id="nav"></ul></nav>
+
+<main class="wrap" id="main"></main>
+
+<footer class="wrap">
+  <p>Дайындаған: БЖ Ж. Тенгельбаева</p>
+  <p>Р. Қабылов атындағы №3 жалпы білім беретін мектеп, бастауыш сыныптар бірлестігі</p>
+</footer>
+
+<script>
+var S='stroke-linecap="round" stroke-linejoin="round"';
+var ART={
+ concert:'<rect x="10" y="14" width="100" height="92" rx="14" fill="#7A4FD0"/><path d="M48 80V40l34-8v40" fill="none" stroke="#fff" stroke-width="6" '+S+'/><circle cx="40" cy="82" r="10" fill="#FFD86B"/><circle cx="74" cy="74" r="10" fill="#FFD86B"/><path d="M92 26l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#fff"/>',
+ letters:'<rect x="8" y="36" width="56" height="56" rx="10" fill="#D93C45"/><text x="36" y="80" text-anchor="middle" font-size="42" font-weight="700" fill="#fff" font-family="Balsamiq Sans,Comic Sans MS,sans-serif">Қ</text><rect x="58" y="20" width="56" height="56" rx="10" fill="#2A66E0" transform="rotate(8 86 48)"/><text x="86" y="64" text-anchor="middle" font-size="42" font-weight="700" fill="#fff" font-family="Balsamiq Sans,Comic Sans MS,sans-serif" transform="rotate(8 86 48)">Ы</text><path d="M14 104h92" stroke="#E9A800" stroke-width="6" '+S+'/>',
+ abacus:'<rect x="12" y="14" width="96" height="92" rx="10" fill="none" stroke="#B67C3A" stroke-width="8"/><path d="M16 40h88M16 62h88M16 84h88" stroke="#8A93B8" stroke-width="3"/><g fill="#D93C45"><circle cx="30" cy="40" r="9"/><circle cx="48" cy="40" r="9"/><circle cx="66" cy="40" r="9"/></g><g fill="#2A66E0"><circle cx="72" cy="62" r="9"/><circle cx="90" cy="62" r="9"/></g><g fill="#1F9460"><circle cx="30" cy="84" r="9"/><circle cx="48" cy="84" r="9"/><circle cx="66" cy="84" r="9"/><circle cx="84" cy="84" r="9"/></g>',
+ shapes:'<circle cx="34" cy="34" r="24" fill="#D93C45"/><rect x="66" y="12" width="44" height="44" fill="#2A66E0"/><rect x="8" y="72" width="60" height="36" fill="#1F9460"/><path d="M92 68l22 40H70z" fill="#E9A800"/>',
+ paint:'<path d="M60 14c-28 0-50 20-50 46 0 24 18 42 40 42 8 0 12-5 10-12-3-10 4-16 14-16h14c14 0 22-10 22-22 0-22-22-38-50-38z" fill="#E7C9A0"/><circle cx="38" cy="44" r="9" fill="#D93C45"/><circle cx="62" cy="32" r="9" fill="#E9A800"/><circle cx="86" cy="44" r="9" fill="#2A66E0"/><circle cx="34" cy="70" r="9" fill="#1F9460"/><path d="M72 108l34-40" stroke="#7A4FD0" stroke-width="8" '+S+'/>',
+ book:'<path d="M60 30c-14-10-32-12-50-8v70c18-4 36-2 50 8 14-10 32-12 50-8V22c-18-4-36-2-50 8z" fill="#fff" stroke="#2A66E0" stroke-width="6" '+S+'/><path d="M60 30v70" stroke="#2A66E0" stroke-width="6"/><path d="M22 42c10-2 20-1 28 3M22 58c10-2 20-1 28 3M22 74c10-2 20-1 28 3M70 45c8-4 18-5 28-3M70 61c8-4 18-5 28-3" stroke="#D93C45" stroke-width="4" fill="none" '+S+'/>',
+ bulb:'<path d="M60 14c-20 0-34 14-34 32 0 12 6 20 13 27 4 4 5 8 5 13h32c0-5 1-9 5-13 7-7 13-15 13-27 0-18-14-32-34-32z" fill="#FFD86B"/><rect x="45" y="90" width="30" height="16" rx="5" fill="#56608C"/><path d="M52 62l8-12 8 12" fill="none" stroke="#B67C3A" stroke-width="5" '+S+'/><path d="M10 40h8M102 40h8M22 14l6 6M98 14l-6 6" stroke="#E9A800" stroke-width="5" '+S+'/>',
+ robot:'<path d="M60 22V10" stroke="#56608C" stroke-width="5" '+S+'/><circle cx="60" cy="9" r="6" fill="#D93C45"/><rect x="22" y="22" width="76" height="56" rx="14" fill="#2A66E0"/><circle cx="44" cy="46" r="9" fill="#fff"/><circle cx="76" cy="46" r="9" fill="#fff"/><circle cx="44" cy="46" r="4" fill="#1B2559"/><circle cx="76" cy="46" r="4" fill="#1B2559"/><path d="M46 64q14 8 28 0" fill="none" stroke="#fff" stroke-width="4" '+S+'/><rect x="34" y="84" width="52" height="28" rx="8" fill="#1F9460"/><circle cx="60" cy="98" r="7" fill="#FFD86B"/>',
+ cup:'<path d="M36 14h48v28c0 14-10 26-24 26S36 56 36 42z" fill="#E9A800"/><path d="M36 22H18c0 16 8 24 20 26M84 22h18c0 16-8 24-20 26" fill="none" stroke="#E9A800" stroke-width="6" '+S+'/><rect x="54" y="68" width="12" height="18" fill="#B67C3A"/><rect x="36" y="86" width="48" height="16" rx="5" fill="#B67C3A"/><path d="M60 26l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z" fill="#fff"/>'
+};
+
+var PLAN=[
+ {d:5, wd:'дүйсенбі', art:'concert', title:'Апталықтың ашылуы', groups:[
+  {evs:[{k:'fun', t:'07:45–08:00', t2:'13:30–14:00', n:'Ашылу салтанаты', subj:'Концерт', room:'АКТ зал', who:'МДО Б. Канашова, БЖ Ж. Тенгельбаева, бастауыш сынып мұғалімдері'}]}
+ ]},
+ {d:6, wd:'сейсенбі', art:'letters', title:'Ашық сабақтар', groups:[
+  {g:'І кезең', evs:[
+   {k:'math', t:'08:50–09:35', l:'2-сабақ', n:'«Жиындар арасындағы қатынас»', cls:'4 «Ә» сынып', subj:'Математика', room:'№12 кабинет', who:'Ташпенова Ханимаш'},
+   {k:'abc', t:'09:45–10:30', l:'3-сабақ', n:'«Қ дыбысы мен әрпі»', cls:'1 «В» сынып', subj:'Әліппе', room:'№23 кабинет', who:'Назарова Тамара'},
+   {k:'abc', t:'10:35–11:20', l:'4-сабақ', n:'«Ы дыбысы мен әрпі»', cls:'1 «Ә» сынып', subj:'Әліппе', room:'№27 кабинет', who:'Накипбекова Динара'},
+   {k:'lang', t:'11:30–12:15', l:'5-сабақ', n:'«Мәтін және оның түрлері»', cls:'4 «Б» сынып', subj:'Қазақ тілі', room:'№25 кабинет', who:'Бекмағанбетова Замира'}]},
+  {g:'ІІ кезең', evs:[
+   {k:'read', t:'14:00–14:25', l:'2-сабақ', n:'«Қара шаңырақ»', cls:'2 «Ә» сынып', subj:'Әдебиеттік оқу', room:'№12 кабинет', who:'Нурманова Венера'},
+   {k:'lang', t:'14:35–15:00', l:'3-сабақ', n:'«Қаратпа сөз»', cls:'3 «А» сынып', subj:'Қазақ тілі', room:'№23 кабинет', who:'Ниязова Құралай'}]}
+ ]},
+ {d:7, wd:'сәрсенбі', art:'abacus', title:'Ашық сабақтар', groups:[
+  {g:'ІІ кезең', evs:[
+   {k:'math', t:'14:00–14:25', l:'1-сабақ', n:'«Қанша? Реті бойынша нешінші?»', cls:'МАС 0 «Ә» сынып', subj:'Математика', room:'№26 кабинет', who:'Телегенова Ханшайым'},
+   {k:'lang', t:'15:00–15:45', l:'2-сабақ', n:'«Дауыссыз п мен б»', cls:'2 «Б» сынып', subj:'Қазақ тілі', room:'№27 кабинет', who:'Тенгельбаева Жанарсулу'},
+   {k:'lang', t:'15:55–16:40', l:'3-сабақ', n:'«Қыстырма сөз»', cls:'3 «Ә» сынып', subj:'Қазақ тілі', room:'№13 кабинет', who:'Сатова Зияда'},
+   {k:'math', t:'16:45–17:30', l:'4-сабақ', n:'«Мүмкіндіктер тармағы»', cls:'3 «Б» сынып', subj:'Математика', room:'№28 кабинет', who:'Дильманова Айна'}]}
+ ]},
+ {d:8, wd:'бейсенбі', art:'shapes', title:'Ашық сабақтар', groups:[
+  {g:'І кезең', evs:[
+   {k:'math', t:'09:05–09:30', l:'2-сабақ', n:'«Дөңгелек, шаршы, тіктөртбұрыш, үшбұрыш»', cls:'МАС 0 «А» сынып', subj:'Математика', room:'№26 кабинет', who:'Бисембеева Райгүл'},
+   {k:'math', t:'09:45–10:30', l:'3-сабақ', n:'«10 көлеміндегі сандарды қосу және азайту»', cls:'1 «А» сынып', subj:'Математика', room:'№11 кабинет', who:'Танирбергенова Базаргул'},
+   {k:'math', t:'10:35–11:20', l:'4-сабақ', n:'«10 көлеміндегі сандарды қосу және азайту»', cls:'1 «Б» сынып', subj:'Математика', room:'№28 кабинет', who:'Матикулова Жанагул'},
+   {k:'math', t:'11:30–12:15', l:'5-сабақ', n:'«Қозғалысқа берілген есептер»', cls:'4 «А» сынып', subj:'Математика', room:'№11 кабинет', who:'Саудабаева Алтынзер'}]}
+ ]},
+ {d:9, wd:'жұма', art:'paint', title:'Саяхат, бояулар және спорт', groups:[
+  {g:'І кезең', evs:[
+   {k:'fun', t:'09:00–10:00', n:'«Мектептегі алғашқы саяхат»', cls:'1-сыныптар', subj:'Қызықты маршрут', room:'Мектеп іші', who:'1-сынып мұғалімдері'},
+   {k:'fun', t:'09:00–10:00', n:'«Сиқырлы бояулар әлемі»', cls:'Мектепалды сыныптар (МАС)', subj:'Арт-терапия', who:'МАС мұғалімдері'}]},
+  {g:'ІІ кезең', evs:[
+   {k:'fun', t:'15:00–16:00', n:'«Көңілді старттар»', cls:'2-сыныптар', subj:'Спорттық сайыс', room:'Спорт зал', who:'2-сынып мұғалімдері, дене шынықтыру мұғалімдері'}]}
+ ]},
+ {d:12, wd:'дүйсенбі', art:'book', title:'Оқу шапшаңдығы және «Зерде»', groups:[
+  {g:'І кезең', evs:[
+   {k:'read', t:'09:00–10:00', t2:'14:10–14:55', n:'«Жылдам оқимыз, мәнерлі оқимыз»', cls:'2–4 сыныптардың оқу шапшаңдығын анықтау', subj:'Оқу шапшаңдығы', room:'№25 кабинет', who:'МДО Б. Канашова, БЖ Ж. Тенгельбаева'}]},
+  {g:'ІІ кезең', evs:[
+   {k:'fun', t:'15:00–16:00', n:'«Зерде»', cls:'3-сыныптар', subj:'Интеллектуалдық сайыс', room:'№28 кабинет', who:'3-сынып мұғалімдері'}]}
+ ]},
+ {d:13, wd:'сейсенбі', art:'bulb', title:'Логика және тапқырлық', groups:[
+  {g:'І кезең', evs:[
+   {k:'fun', t:'09:00–10:00', n:'«Кім жылдам? Кім тапқыр?»', cls:'1-сыныптар', subj:'Логикалық ойындар', room:'№28 кабинет', who:'1-сынып мұғалімдері'}]},
+  {g:'ІІ кезең', evs:[
+   {k:'fun', t:'15:00–16:00', n:'«Қызық екен»', subj:'Интеллектуалдық сайыс', room:'№25 кабинет', who:'Нурманова Венера'}]}
+ ]},
+ {d:14, wd:'сәрсенбі', art:'robot', title:'Көшбасшылар мен өнертапқыштар', groups:[
+  {g:'І кезең', evs:[
+   {k:'fun', t:'09:00–10:00', n:'«ХХІ ғасыр көшбасшысы»', cls:'4-сыныптар', subj:'Интеллектуалдық сайыс', room:'№25 кабинет', who:'4-сынып мұғалімдері'}]},
+  {g:'ІІ кезең', evs:[
+   {k:'fun', t:'15:00–16:00', n:'«Жас өнертапқыш»', cls:'3–4 сыныптар. Қалдық материалдардан пайдалы зат жасау', subj:'Сайыс', room:'№25 кабинет', who:'3–4 сынып мұғалімдері'}]}
+ ]},
+ {d:15, wd:'бейсенбі', art:'cup', title:'Апталықтың жабылуы', groups:[
+  {evs:[{k:'fun', t:'10:00–11:00', n:'Жабылу салтанаты', subj:'Марапаттау', room:'АКТ зал', who:'МДО Б. Канашова, БЖ Ж. Тенгельбаева, бастауыш сынып мұғалімдері'}]}
+ ]}
+];
+
+function pad(n){return (n<10?'0':'')+n}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+var now=new Date(), today=(now.getFullYear()===2026&&now.getMonth()===9)?now.getDate():-1;
+var nav='', main='';
+PLAN.forEach(function(p){
+  var isT=p.d===today;
+  nav+='<li><a href="#d'+p.d+'"'+(isT?' class="today" aria-current="date"':'')+'><b>'+pad(p.d)+'</b><span>'+p.wd.slice(0,3)+'</span></a></li>';
+  main+='<section class="day'+(isT?' today':'')+'" id="d'+p.d+'"><div class="stamp"><div><div class="num">'+pad(p.d)+'</div><div class="wd">қазан, '+p.wd+'</div><span class="badge">Бүгін</span></div>'+
+        '<svg viewBox="0 0 120 120" aria-hidden="true">'+ART[p.art]+'</svg></div><div><h2>'+esc(p.title)+'</h2>';
+  p.groups.forEach(function(g){
+    if(g.g) main+='<h3 class="shift">'+g.g+'</h3>';
+    main+='<ul class="evs">';
+    g.evs.forEach(function(e){
+      main+='<li class="ev k-'+e.k+'"><div class="time"><b>'+e.t+'</b>'+(e.t2?'<b>'+e.t2+'</b>':'')+(e.l?'<span>'+e.l+'</span>':'')+'</div>'+
+        '<div><h4>'+esc(e.n)+'</h4>'+(e.cls?'<p class="cls">'+esc(e.cls)+'</p>':'')+'</div>'+
+        '<div class="meta"><span class="chip">'+esc(e.subj)+'</span>'+(e.room?'<span>'+esc(e.room)+'</span>':'')+'<span>'+esc(e.who)+'</span></div></li>';
+    });
+    main+='</ul>';
+  });
+  main+='</div></section>';
+});
+document.getElementById('nav').innerHTML=nav;
+document.getElementById('main').innerHTML=main;
+</script>
+</body>
+</html>
